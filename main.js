@@ -1,21 +1,21 @@
 //API trabalha com JSON, formato de texto
 //GET= pega POST= leva dados api
-//ps: getUser = pegarUsuario e addNewUseR pode ser adicionarNovoUsuario
+//ps: getProduct = pegarUsuario e addNewProduct pode ser adicionarNovoUsuario
 
 //VARIVEIS GLOBAIS
-const url="http://localhost:3001/productus"; //url do projeto de cad de produtos
+const url="http://localhost:3001/productus"; //url do projeto de cadastro de produtos
 //url da API
-const newUser = {
+const newProduct = {
         name: "Fone sem fio",
         price:10
     }
-const userUpdate = {
+const ProductUpdate = {
         name: "Fone sem fio",
         price:45
     }
 const id = 2;
 // função que pega os dados
-function getUser(){
+function getProduct(){
 //axios = carrega o que esta na api
     axios.get(url)
 //get (pegar)= metodo
@@ -31,47 +31,47 @@ function getUser(){
     })
     // .cath(error => console.log(error)) //mostra erro porém neste caso da erro pois no chrome
 }
-//getUser();
+//getProduct();
 //------------------------------------------------------------
 //função que envia os dados a api
-function addNewUseR(){
-    axios.post(url, newUser)
+function addNewProduct(){
+    axios.post(url, newProduct)
     .then(response => {
        alert("Criado novo Produto")
     })
     // .cath(error => console.log(error))
 }
-// addNewUseR();
+// addNewProduct();
 //------------------------------------------------------------
 //Função que atualiza os dados da api
-function updateUser() {
+function updateProduct() {
 //em `url/ID` estamos dizendo que será o id X que será editado
 //template string e a forma de CONCATENAR sem usar +
-    axios.put(`${url}/${id}`, userUpdate)
+    axios.put(`${url}/${id}`, ProductUpdate)
     .then(response => {
         alert("Atualizado o produto " + `${id}`)
     })
     //.cath(error => console.log(error))
 }
-//updateUser();
+//updateProduct();
 //------------------------------------------------------------
 //Deleta os dados
 
-function deleteUser(){
+function deleteProduct(){
     axios.delete(`${url}/${id}`)
     .then(response => {
        // alert("Deletado produto " + `${id}`)
     })
     .cath(error => console.log(error))
 }
-//deleteUser();
+//deleteProduct();
 //------------------------------------------------------------
 //Pega UM dado específico 
-function getOneUser(){
+function getOneProduct(){
     axios.get(`${url}/${id}`)
     .then(response => {
         const data = response.data
         renderResults.textContent = JSON.stringify(data) //pega o resultado e trasformaem texto
     })
 }
-getOneUser();
+getOneProduct();

@@ -1,0 +1,11 @@
+NOME DO USUÁRIO:
+
+Requisição -> https://www.dp4.com.br/webservice/buscaMenusAcesso
+Parametros -> {"cod_empresa":"19","cod_filial":"0","cod_repres":"3034","tipo_representante":"GR"}
+Tipo -> POST
+
+NOTIFICAÇÕES:
+
+Requisição -> https://www.dp4.com.br/webservice/buscaNotificacoesRepres
+Parametros -> {"cod_empresa":"19","cod_filial":"0","cod_repres":"3034"}
+Tipo -> POST
